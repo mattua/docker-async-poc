@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  producer:
+    #build: ./producer
+    build:
+      context: ../
+      dockerfile: deployment/producer/Dockerfile
+  
