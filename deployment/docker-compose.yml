@@ -6,4 +6,13 @@ services:
     build:
       context: ../
       dockerfile: deployment/producer/Dockerfile
+    volumes:
+      - ./jobs:/jobs
+  consumer:
+    #build: ./producer
+    build:
+      context: ../
+      dockerfile: deployment/consumer/Dockerfile
+    volumes:
+      - ./jobs:/jobs
   
