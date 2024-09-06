@@ -1,4 +1,4 @@
 FROM python:slim
 
-COPY ../src /dogs
-CMD python /dogs/producer.py
+COPY ../src /src
+CMD python /src/producer.py

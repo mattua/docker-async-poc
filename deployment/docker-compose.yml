@@ -7,12 +7,21 @@ services:
       context: ../
       dockerfile: deployment/producer/Dockerfile
     volumes:
-      - ./jobs:/jobs
+      - ../jobs:/jobs
+      - ../db/:/db
   consumer:
     #build: ./producer
     build:
       context: ../
       dockerfile: deployment/consumer/Dockerfile
     volumes:
-      - ./jobs:/jobs
+      - ../jobs:/jobs
+      - ../db/:/db
+      - ../output:/output
+  #sqlite3:
+  #  image: nouchka/sqlite3:latest
+  #  stdin_open: true
+  #  tty: true
+  #  volumes:
+  #    - ./db/:/db
   
