@@ -1,11 +1,10 @@
 import time
 import sqlite3
 from constants import database_name,output_file_path
-import os
 from uuid import uuid4
 from random import random
 from os import path
-import csv
+
 
 def init():
     pass
