@@ -20,3 +20,23 @@ docker-compose -f deployment/docker-compose.yml up --build
 
 MacOS:
 docker compose -f deployment/docker-compose.yml up --build
+
+
+
+pipenv
+-------------
+pip3 install pipenv
+pipenv install requests - will install venv
+
+--activate the venv
+pipenv shell
+
+
+
+https://pipenv.pypa.io/en/stable/docker.html
+
+--installs from piplock not pipfile
+pipenv install --ignore-pipfile
+
+-- generate reuirements.txt from pipenv
+pipenv run pip freeze > requirements.txt
