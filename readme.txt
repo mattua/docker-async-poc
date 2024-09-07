@@ -16,10 +16,17 @@ the output of all jobs to csv file and then exits the container. At this point t
 
 Run the following command from the root directory of the project;
 
+== build the base image
+docker build -f deployment/base/Dockerfile -t mattua/tmp-base .
+
 docker-compose -f deployment/docker-compose.yml up --build
 
 MacOS:
 docker compose -f deployment/docker-compose.yml up --build
+
+
+-- build base image with dependencies
+docker build -f deployment/base/Dockerfile -t tmp-base .
 
 
 
@@ -40,3 +47,7 @@ pipenv install --ignore-pipfile
 
 -- generate reuirements.txt from pipenv
 pipenv run pip freeze > requirements.txt
+
+
+----get shell inside the base image
+docker run -it --entrypoint '/bin/sh' mattua/tmp-base

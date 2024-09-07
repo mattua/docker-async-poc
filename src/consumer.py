@@ -4,7 +4,7 @@ from constants import database_name,output_file_path
 from uuid import uuid4
 from random import random
 from os import path
-
+import psycopg
 
 def init():
     pass
